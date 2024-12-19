@@ -1,7 +1,6 @@
 #pragma once
 
 #include "Position2D.hpp"
-#include <tinyslam/geometry/Position2D.hpp>
 
 namespace tinyslam::geometry {
 

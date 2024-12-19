@@ -1,15 +1,13 @@
 #pragma once
 
-#include "Pose2D.hpp"
 #include <memory>
 #include <set>
-#include <tinyslam/geometry/Pose2D.hpp>
-#include <tinyslam/geometry/Edge.hpp>
+#include "../geometry/Pose2D.hpp"
+#include "Landmark.hpp"
 
 namespace tinyslam::graphslam {
 
     /* \brief GraphSLAM node type. */
-    template <typename MeasurementT>
     class Node {
 
         private:
@@ -17,26 +15,29 @@ namespace tinyslam::graphslam {
             unsigned long id;
 
             /* \brief Robot pose at this node. */
-            Pose2D pose;
+            geometry::Pose2D pose;
 
             /* \brief Set of landmark measurements (edges). */
-            std::set<Edge<MeasurementT>> edges;
+            std::set<std::shared_ptr<Landmark>> edges;
 
         public:
             /* \brief Node constructor. */
-            Node();
+            Node(const geometry::Pose2D& pose);
 
             /* \brief Node ID getter. */
             unsigned long getId() const;
 
             /* \brief Pose getter. */
-            Pose2D getPose() const;
+            geometry::Pose2D getPose() const;
 
             /* \brief Edge set getter. */
-            std::set<Edge> getEdges() const;
+            std::set<std::shared_ptr<Landmark>> getEdges() const;
 
             /* \brief Pose setter. */
-            void setPose(Pose2D pose);
+            void setPose(geometry::Pose2D pose);
+
+            /* \brief Associate a measurement to the node. */
+            void assocMeasurement(Landmark measurement);
 
     };
 }

@@ -1,5 +1,6 @@
 #pragma once
-#include <tinyslam/SLAM.hpp>
+
+#include "../SLAM.hpp"
 
 namespace tinyslam::graphslam {
 
