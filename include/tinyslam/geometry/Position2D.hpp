@@ -1,5 +1,7 @@
 #pragma once
 
+#include <cmath>
+
 namespace tinyslam::geometry {
 
     /* \brief 2-dimensional position class. Has a pair of "x" and "y" coordinates. */
@@ -22,6 +24,6 @@ namespace tinyslam::geometry {
     		float getY() const;
 
             /* \brief Get the Euclidean distance. */
-            float getEuclideanDist() const;
+            float getEuclideanDist(Position2D other) const;
 	};
 }
