@@ -2,11 +2,10 @@
 
 #include "../SLAM.hpp"
 
-namespace tinyslam::graphslam {
+namespace tinyslam::ekfslam {
 
 	template <typename LandmarkT>
-	class GraphSLAM : SLAM {
+	class EKFSLAM : SLAM {
 
-	};
-
+	}; 
 }

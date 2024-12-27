@@ -23,3 +23,4 @@ std::shared_ptr<Landmark> LandmarkManager::registerLandmark(Landmark& new_landma
 std::shared_ptr<Landmark> LandmarkManager::getByID(unsigned long id) const {
     return this->landmark_map.at(id);
 }
+
