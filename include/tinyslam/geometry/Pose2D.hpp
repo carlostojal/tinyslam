@@ -24,59 +24,44 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+#include <tinyslam/geometry/Point2D.hpp>
+
 namespace tinyslam::geometry {
 
 	/**
-	 * @class Point2D
+	 * @class Pose2D
 	 *
-	 * @brief Represents a point in 2D space.
+	 * @brief Represents a pose in 2D space.
 	 */
-	class Point2D {
+	class Pose2D : public Point2D {
 
 		private:
-			/// "x" coordinate value (meters).
-			float x;
-
-			/// "y" coordinate value (meters).
-			float y;
+			/// Heading/yaw angle value (radians).
+			float theta;
 
 		public:
 			/**
-			 * @brief Point constructor. Receives coordinates.
+			 * @brief Pose constructor. Receives coordinates and heading.
 			 *
 			 * @param x "x" coordinate value.
 			 * @param y "y" coordinate value.
+			 * @param theta Heading/yaw angle value.
 			 */
-			Point2D(float x, float y);
+			Point2D(float x, float y, float theta);
 
 			/**
-			 * @brief "x" getter.
+			 * @brief "theta" getter.
 			 *
-			 * @return "x" value.
+			 * @return "theta" value.
 			 */
-			float getX() const;
+			float getTheta() const;
 
 			/**
-			 * @brief "y" getter.
+			 * @brief "theta" setter.
 			 *
-			 * @return "y" value.
+			 * @param theta New "theta" value.
 			 */
-			float getY() const;
-
-			/**
-			 * @brief "x" setter.
-			 *
-			 * @param x New "x" value.
-			 */
-			void setX(float x);
-
-			/**
-			 * @brief "y" setter.
-			 *
-			 * @param y New "y" value.
-			 */
-			void setY(float y);
-
+			void setTheta(float theta);
 	};
 }
 

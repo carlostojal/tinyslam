@@ -1,4 +1,3 @@
-#pragma once
 
 /*
 MIT License
@@ -24,69 +23,20 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-namespace tinyslam::geometry {
+#include <tinyslam/geometry/Pose2D.hpp>
 
-	/**
-	 * @class Point2D
-	 *
-	 * @brief Represents a point in 2D space.
-	 */
-	class Point2D {
+using namespace tinyslam::geometry;
 
-		private:
-			/// "x" coordinate value (meters).
-			float x;
-
-			/// "y" coordinate value (meters).
-			float y;
-
-		public:
-			/**
-			 * @brief Point constructor. Receives coordinates.
-			 *
-			 * @param x "x" coordinate value.
-			 * @param y "y" coordinate value.
-			 */
-			Point2D(float x, float y);
-
-			/**
-			 * @brief "x" getter.
-			 *
-			 * @return "x" value.
-			 */
-			float getX() const;
-
-			/**
-			 * @brief "y" getter.
-			 *
-			 * @return "y" value.
-			 */
-			float getY() const;
-
-			/**
-			 * @brief "x" setter.
-			 *
-			 * @param x New "x" value.
-			 */
-			void setX(float x);
-
-			/**
-			 * @brief "y" setter.
-			 *
-			 * @param y New "y" value.
-			 */
-			void setY(float y);
-
-	};
+Pose2D::Pose2D(float x, float y, float theta) : Point2D(x, y) {
+	this->theta = theta;
 }
 
+float Pose2D::getTheta() const {
+	return this->theta;
+}
 
-
-
-
-
-
-
-
+void Pose2D::setTheta(float theta) {
+	this->theta = theta;
+}
 
 

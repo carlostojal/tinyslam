@@ -25,12 +25,11 @@ SOFTWARE.
 
 #include <tinyslam/geometry/Point2D.hpp>
 
-using namespace tinyslam::geoemtry;
+using namespace tinyslam::geometry;
 
-Point2D::Point2D(float x, float y, float theta) {
+Point2D::Point2D(float x, float y) {
 	this->x = x;
 	this->y = y;
-	this->theta = theta;
 }
 
 float Point2D::getX() const {
@@ -41,20 +40,12 @@ float Point2D::getY() const {
 	return this->y;
 }
 
-float Point2D::getTheta() const {
-	return this->theta;
-}
-
 void Point2D::setX(float x) {
 	this->x = x;
 }
 
 void Point2D::setY(float y) {
 	this->y = y;
-}
-
-void Point2D::setTheta(float theta) {
-	this->theta = theta;
 }
 
 
