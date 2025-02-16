@@ -28,28 +28,28 @@ SOFTWARE.
 using namespace tinyslam::common;
 
 template <typename RobotStateT, typename MapStateT>
-State::State(RobotStateT robot_state, MapStateT map_state) {
+State<RobotStateT,MapStateT>::State(RobotStateT robot_state, MapStateT map_state) {
 	this->robot_state = robot_state;
 	this->map_state = map_state;
 }
 
-template <typename RobotStateT>
-RobotStateT State::getRobotState() const {
+template <typename RobotStateT, typename MapStateT>
+RobotStateT State<RobotStateT,MapStateT>::getRobotState() const {
 	return this->robot_state;
 }
 
-template <typename MapStateT>
-MapStateT State::getMapState() const {
+template <typename RobotStateT, typename MapStateT>
+MapStateT State<RobotStateT,MapStateT>::getMapState() const {
 	return this->map_state;
 }
 
-template <typename RobotStateT>
-void State::setRobotState(RobotStateT robot_state) {
+template <typename RobotStateT, typename MapStateT>
+void State<RobotStateT,MapStateT>::setRobotState(RobotStateT robot_state) {
 	this->robot_state = robot_state;
 }
 
-template <typename MapStateT>
-void State::setMapState(MapStateT map_state) {
+template <typename RobotStateT, typename MapStateT>
+void State<RobotStateT,MapStateT>::setMapState(MapStateT map_state) {
 	this->map_state = map_state;
 }
 

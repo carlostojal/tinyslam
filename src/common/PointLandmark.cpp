@@ -28,17 +28,17 @@ SOFTWARE.
 using namespace tinyslam::common;
 
 template <typename PointT>
-PointLandmark::PointLandmark(unsigned int id, PointT position) : Landmark(id) {
+PointLandmark<PointT>::PointLandmark(unsigned int id, PointT position) : Landmark(id) {
 	this->position = position;
 }
 
 template <typename PointT>
-PointT PointLandmark::getPosition() const {
+PointT PointLandmark<PointT>::getPosition() const {
 	return this->position;
 }
 
 template <typename PointT>
-void PointLandmark::setPosition(PointT position) {
+void PointLandmark<PointT>::setPosition(PointT position) {
 	this->position = position;
 }
 

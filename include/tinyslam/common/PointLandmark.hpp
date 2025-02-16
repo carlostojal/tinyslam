@@ -62,5 +62,5 @@ namespace tinyslam::common {
 			 * @param position Position to set.
 			 */
 			void setPosition(PointT position);
-	}
+	};
 }

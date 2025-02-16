@@ -47,7 +47,7 @@ namespace tinyslam::geometry {
 			 * @param y "y" coordinate value.
 			 * @param theta Heading/yaw angle value.
 			 */
-			Point2D(float x, float y, float theta);
+			Pose2D(float x, float y, float theta);
 
 			/**
 			 * @brief "theta" getter.
