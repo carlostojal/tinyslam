@@ -1,0 +1,16 @@
+name: TinySLAM
+on: 
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: apt update && apt -y upgrade
+      - run: apt install -y build-essential cmake
+      - run: apt install -y libeigen3-dev
+      - run: mkdir build && cd build
+      - run: cmake ..
+      - run: make -j8
+
