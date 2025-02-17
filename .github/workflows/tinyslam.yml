@@ -7,9 +7,18 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - run: apt update && apt -y upgrade
-      - run: apt install -y build-essential cmake
-      - run: apt install -y libeigen3-dev
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Update and upgrade packages
+        run: sudo apt update && sudo apt -y upgrade
+
+      - name: Install build tools
+        run: sudo apt install -y build-essential cmake
+
+      - name: Install dependencies
+        run: sudo apt install -y libeigen3-dev
+
       - run: mkdir build && cd build
       - run: cmake ..
       - run: make -j8
