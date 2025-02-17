@@ -1,5 +1,7 @@
 # tinyslam
 
+![Actions Status](https://github.com/carlostojal/tinyslam/actions/workflows/tinyslam.yml/badge.svg)
+
 Simple implementation of some SLAM algorithms.
 
 **WARNING**: This repository is a work-in-progress and does not intend to be ready for production.
