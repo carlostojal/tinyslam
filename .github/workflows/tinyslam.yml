@@ -10,8 +10,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Update and upgrade packages
-        run: sudo apt update && sudo apt -y upgrade
+      - name: Update packages
+        run: sudo apt update
 
       - name: Install build tools
         run: sudo apt install -y build-essential cmake
