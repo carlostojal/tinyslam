@@ -3,6 +3,7 @@ set(COMMON_SOURCES
 	Landmark.cpp
 	LandmarkManager.cpp
 	PointLandmark.cpp
+	Measurement.cpp
 	State.cpp)
 
 add_library(common STATIC ${COMMON_SOURCES})
