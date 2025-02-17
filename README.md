@@ -6,8 +6,8 @@ Simple implementation of some SLAM algorithms.
 
 ## Roadmap
 
--[ ] EKF-SLAM (WIP)
--[ ] GraphSLAM
+- [ ] EKF-SLAM (WIP)
+- [ ] GraphSLAM
 
 ## Requirements
 
