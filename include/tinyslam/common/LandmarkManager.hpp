@@ -23,6 +23,7 @@ SOFTWARE.
 */
 
 #include <memory>
+#include <vector>
 #include <unordered_map>
 
 #include <tinyslam/common/Landmark.hpp>
@@ -43,11 +44,19 @@ namespace tinyslam::common {
 			/// Map of landmarks indexed by its identifier.
 			std::unordered_map<unsigned int, std::shared_ptr<Landmark>> landmarks_by_id;
 
+			/// List of landmarks.
+			std::vector<std::shared_ptr<Landmark>> landmarks_list;
+
 		public:
 			/**
 			 * @brief Landmark manager constructor.
 			 */
 			LandmarkManager();
+
+			/**
+			 * @brief Landmark manager destructor.
+			 */
+			~LandmarkManager();
 
 			/**
 			 * @brief Retrieve a landmark by ID.

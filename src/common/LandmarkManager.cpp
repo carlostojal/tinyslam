@@ -30,6 +30,12 @@ LandmarkManager::LandmarkManager() {
 	this->last_id = 0;
 }
 
+LandmarkManager::~LandmarkManager() {
+	// clear all containers to free the shared pointers
+	this->landmarks_by_id.clear();
+	this->landmarks_list.clear();
+}
+
 std::shared_ptr<Landmark>& LandmarkManager::getByID(unsigned int id) {
 	return this->landmarks_by_id[id];
 }
