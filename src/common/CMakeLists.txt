@@ -1,6 +1,7 @@
 
 set(COMMON_SOURCES
 	Landmark.cpp
+	LandmarkManager.cpp
 	PointLandmark.cpp
 	State.cpp)
 
