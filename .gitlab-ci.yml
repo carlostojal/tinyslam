@@ -8,6 +8,7 @@ build-docs:
   image: ubuntu:22.04
   script:
     - mkdir -p docs
+    - apt update
     - apt install -y doxygen graphviz
     - doxygen
   artifacts:
