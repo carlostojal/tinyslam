@@ -9,13 +9,13 @@ build-docs:
   script:
     - mkdir -p docs
     - apt update
-    - apt install -y doxygen graphviz python3 python3-pip
-    - pip3 install sphinx sphinx-rtd-theme breathe
+    - apt install -y doxygen graphviz # python3 python3-pip
+    # - pip3 install sphinx sphinx-rtd-theme breathe
     - doxygen
-    - sphinx-build -b html . _build/html
+    # - sphinx-build -b html . _build/html
   artifacts:
     paths:
-      - _build/html
+      # - _build/html
       - docs/html
     expire_in: 3 hours
 
@@ -26,10 +26,10 @@ deploy-docs:
     - build-docs
   pages: true
   script:
-    - mkdir -p public/sphinx
-    - mkdir -p public/doxygen
-    - mv _build/html public/sphinx
-    - mv docs/html public/doxygen
+    # - mkdir -p public/sphinx
+    # - mkdir -p public/doxygen
+    # - mv _build/html public/sphinx
+    - mv docs/html public
   artifacts:
     paths:
       - public/**
