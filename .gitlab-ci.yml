@@ -25,6 +25,8 @@ deploy-docs:
     - build-docs
   pages: true
   script:
+    - mkdir -p public/sphinx
+    - mkdir -p public/doxygen
     - mv _build/html public/sphinx
     - mv docs/html public/doxygen
   artifacts:
