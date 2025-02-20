@@ -16,6 +16,7 @@ build-docs:
   artifacts:
     paths:
       - _build/html
+      - docs/html
     expire_in: 3 hours
 
 deploy-docs:
