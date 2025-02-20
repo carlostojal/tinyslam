@@ -1,0 +1,29 @@
+
+stages:
+  - build
+  - deploy
+
+build-docs:
+  stage: build
+  image: ubuntu:22.04
+  script:
+    - mkdir -p docs
+    - apt install -y doxygen graphviz
+    - doxygen
+  artifacts:
+    paths:
+      - docs/html
+    expire_in: 2 hours
+
+deploy-docs:
+  stage: deploy
+  image: ubuntu:22.04
+  dependencies:
+    - build-docs
+  pages: true
+  script:
+    - mv docs/html public
+  artifacts:
+    paths:
+      - public/**
+
