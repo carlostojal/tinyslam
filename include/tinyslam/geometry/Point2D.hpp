@@ -24,6 +24,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+#include <Eigen/Dense>
+
 namespace tinyslam::geometry {
 
 	/**
@@ -34,11 +36,9 @@ namespace tinyslam::geometry {
 	class Point2D {
 
 		private:
-			/// "x" coordinate value (meters).
-			float x;
 
-			/// "y" coordinate value (meters).
-			float y;
+			/// Eigen vector with the coordinate values.
+			Eigen::Vector2f point;
 
 		public:
 			/**
@@ -64,6 +64,13 @@ namespace tinyslam::geometry {
 			float getY() const;
 
 			/**
+			 * @brief Get as vector.
+			 * 
+			 * @return Eigen vector.
+			 */
+			virtual Eigen::Vector2f getVector() const;
+
+			/**
 			 * @brief "x" setter.
 			 *
 			 * @param x New "x" value.
@@ -77,6 +84,12 @@ namespace tinyslam::geometry {
 			 */
 			void setY(float y);
 
+			/**
+			 * @brief Set as vector.
+			 * 
+			 * @param vector Vector to assign.
+			 */
+			void setVector(Eigen::Vector2f vector);
 	};
 }
 

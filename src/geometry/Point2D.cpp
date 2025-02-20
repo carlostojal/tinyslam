@@ -28,24 +28,32 @@ SOFTWARE.
 using namespace tinyslam::geometry;
 
 Point2D::Point2D(float x, float y) {
-	this->x = x;
-	this->y = y;
+	this->point[0] = x;
+	this->point[1] = y;
 }
 
 float Point2D::getX() const {
-	return this->x;
+	return this->point[0];
 }
 
 float Point2D::getY() const {
-	return this->y;
+	return this->point[1];
+}
+
+Eigen::Vector2f Point2D::getVector() const {
+	return this->point;
 }
 
 void Point2D::setX(float x) {
-	this->x = x;
+	this->point[0] = x;
 }
 
 void Point2D::setY(float y) {
-	this->y = y;
+	this->point[1] = y;
+}
+
+void Point2D::setVector(Eigen::Vector2f vector) {
+	this->point = vector;
 }
 
 
