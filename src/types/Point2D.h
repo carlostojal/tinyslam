@@ -4,8 +4,8 @@
 
 #ifndef POINT2D_H
 #define POINT2D_H
-#include <Eigen/src/Core/Matrix.h>
 
+#include <Eigen/Dense>
 
 namespace tinyslam::types {
     /**
@@ -33,7 +33,7 @@ namespace tinyslam::types {
          *
          * @return Constant reference to vector.
          */
-        [[nodiscard]] const Eigen::Vector2f &asVector() const;
+        [[nodiscard]] const Eigen::Vector2f &asVector() const noexcept;
 
     private:
         /// Vector values.
