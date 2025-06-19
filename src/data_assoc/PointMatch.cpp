@@ -8,11 +8,11 @@
 
 using namespace tinyslam::data_assoc;
 
-PointMatch::PointMatch(const types::Point2D &first) : match_ {first, nullptr} noexcept {
+PointMatch::PointMatch(const types::Point2D &first) noexcept : match_ {first, nullptr} {
 
 }
 
-const tinyslam::types::Point2D &PointMatch::getPoint() const {
+const tinyslam::types::Point2D &PointMatch::getPoint() const noexcept{
     return this->match_.first;
 }
 
