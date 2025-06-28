@@ -5,6 +5,7 @@
 #ifndef POINTMATCH_H
 #define POINTMATCH_H
 
+#include <memory>
 #include <utility>
 
 #include "Point2D.h"
@@ -22,10 +23,10 @@ namespace tinyslam::data_assoc {
         /**
          * @brief Constructor from match.
          *
-         * @param first First point.
-         * @param second Second point.
+         * @param first Reference point.
+         * @param second Match point.
          */
-        PointMatch(const types::Point2D &point) noexcept;
+        PointMatch(const types::Point2D &first, std::shared_ptr<types::Point2D> second) noexcept;
 
         /**
          * @brief Get the reference point.
@@ -37,20 +38,20 @@ namespace tinyslam::data_assoc {
         /**
          * @brief Get the matching point.
          *
-         * @param out Matching point.
-         * @return "True" if the match was set, "false" otherwise.
+         * @return Pointer to the matching point.
          */
-        bool getMatch(types::Point2D& out) const noexcept;
+        const std::shared_ptr<types::Point2D> getMatch() const noexcept;
 
         /**
          * @brief Set the matching point.
          *
-         * @param point
+         * @param point Matching point to set.
          */
-        void setMatch(const types::Point2D &point) noexcept;
+        void setMatch(std::shared_ptr<types::Point2D> point) noexcept;
 
     private:
-        std::pair<const types::Point2D &, const types::Point2D *> match_;
+        /// Pair for corresponding a point to a match.
+        std::pair<const types::Point2D &, std::shared_ptr<types::Point2D>> match_;
     };
 }
 

@@ -6,29 +6,22 @@
 
 #include <stdexcept>
 
+using namespace tinyslam;
 using namespace tinyslam::data_assoc;
 
-PointMatch::PointMatch(const types::Point2D &first) noexcept : match_ {first, nullptr} {
+PointMatch::PointMatch(const types::Point2D &first, const std::shared_ptr<types::Point2D> second) noexcept :
+match_ {first, second} {
 
 }
 
-const tinyslam::types::Point2D &PointMatch::getPoint() const noexcept{
+const types::Point2D &PointMatch::getPoint() const noexcept{
     return this->match_.first;
 }
 
-bool PointMatch::getMatch(types::Point2D &out) const noexcept {
-    bool is_set = false;
-
-    if (this->match_.second == nullptr) {
-        is_set = false;
-    } else {
-        is_set = true;
-        out = *(this->match_.second);
-    }
-
-    return is_set;
+const std::shared_ptr<types::Point2D> PointMatch::getMatch() const noexcept {
+    return match_.second;
 }
 
-void PointMatch::setMatch(const types::Point2D &point) noexcept {
-    this->match_.second = &point;
+void PointMatch::setMatch(std::shared_ptr<types::Point2D> point) noexcept {
+    this->match_.second = point;
 }
